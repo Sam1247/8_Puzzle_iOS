@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20C49A512561DBCC00C5380F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A502561DBCC00C5380F /* AppDelegate.swift */; };
+		20C49A532561DBCC00C5380F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A522561DBCC00C5380F /* SceneDelegate.swift */; };
+		20C49A552561DBCC00C5380F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A542561DBCC00C5380F /* ViewController.swift */; };
+		20C49A582561DBCC00C5380F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C49A562561DBCC00C5380F /* Main.storyboard */; };
+		20C49A5B2561DBCC00C5380F /* __puzzle_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A592561DBCC00C5380F /* __puzzle_iOS.xcdatamodeld */; };
+		20C49A5D2561DBD200C5380F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20C49A5C2561DBD200C5380F /* Assets.xcassets */; };
+		20C49A602561DBD200C5380F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C49A5E2561DBD200C5380F /* LaunchScreen.storyboard */; };
+		20C49A6A2561DF9300C5380F /* Solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A682561DF9300C5380F /* Solver.cpp */; };
+		20C49A6C2561E47900C5380F /* CPPWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A6B2561E47900C5380F /* CPPWrapper.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		20C49A4D2561DBCC00C5380F /* 8_puzzle_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 8_puzzle_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20C49A502561DBCC00C5380F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20C49A522561DBCC00C5380F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		20C49A542561DBCC00C5380F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20C49A572561DBCC00C5380F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		20C49A5A2561DBCC00C5380F /* __puzzle_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = __puzzle_iOS.xcdatamodel; sourceTree = "<group>"; };
+		20C49A5C2561DBD200C5380F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20C49A5F2561DBD200C5380F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20C49A612561DBD200C5380F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20C49A672561DF9200C5380F /* 8_puzzle_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "8_puzzle_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		20C49A682561DF9300C5380F /* Solver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Solver.cpp; sourceTree = "<group>"; };
+		20C49A692561DF9300C5380F /* Solver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Solver.hpp; sourceTree = "<group>"; };
+		20C49A6B2561E47900C5380F /* CPPWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CPPWrapper.mm; sourceTree = "<group>"; };
+		20C49A6D2561E49F00C5380F /* CPPWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPPWrapper.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20C49A4A2561DBCC00C5380F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20C49A442561DBCC00C5380F = {
+			isa = PBXGroup;
+			children = (
+				20C49A4F2561DBCC00C5380F /* 8_puzzle_iOS */,
+				20C49A4E2561DBCC00C5380F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20C49A4E2561DBCC00C5380F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20C49A4D2561DBCC00C5380F /* 8_puzzle_iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20C49A4F2561DBCC00C5380F /* 8_puzzle_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				20C49A502561DBCC00C5380F /* AppDelegate.swift */,
+				20C49A522561DBCC00C5380F /* SceneDelegate.swift */,
+				20C49A542561DBCC00C5380F /* ViewController.swift */,
+				20C49A6E2561E61800C5380F /* CPP Wrapper */,
+				20C49A562561DBCC00C5380F /* Main.storyboard */,
+				20C49A672561DF9200C5380F /* 8_puzzle_iOS-Bridging-Header.h */,
+				20C49A5C2561DBD200C5380F /* Assets.xcassets */,
+				20C49A5E2561DBD200C5380F /* LaunchScreen.storyboard */,
+				20C49A612561DBD200C5380F /* Info.plist */,
+				20C49A592561DBCC00C5380F /* __puzzle_iOS.xcdatamodeld */,
+			);
+			path = 8_puzzle_iOS;
+			sourceTree = "<group>";
+		};
+		20C49A6E2561E61800C5380F /* CPP Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				20C49A682561DF9300C5380F /* Solver.cpp */,
+				20C49A6B2561E47900C5380F /* CPPWrapper.mm */,
+				20C49A6D2561E49F00C5380F /* CPPWrapper.h */,
+				20C49A692561DF9300C5380F /* Solver.hpp */,
+			);
+			path = "CPP Wrapper";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20C49A4C2561DBCC00C5380F /* 8_puzzle_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20C49A642561DBD200C5380F /* Build configuration list for PBXNativeTarget "8_puzzle_iOS" */;
+			buildPhases = (
+				20C49A492561DBCC00C5380F /* Sources */,
+				20C49A4A2561DBCC00C5380F /* Frameworks */,
+				20C49A4B2561DBCC00C5380F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 8_puzzle_iOS;
+			productName = 8_puzzle_iOS;
+			productReference = 20C49A4D2561DBCC00C5380F /* 8_puzzle_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20C49A452561DBCC00C5380F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = Dumbies;
+				TargetAttributes = {
+					20C49A4C2561DBCC00C5380F = {
+						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
+					};
+				};
+			};
+			buildConfigurationList = 20C49A482561DBCC00C5380F /* Build configuration list for PBXProject "8_puzzle_iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20C49A442561DBCC00C5380F;
+			productRefGroup = 20C49A4E2561DBCC00C5380F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20C49A4C2561DBCC00C5380F /* 8_puzzle_iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20C49A4B2561DBCC00C5380F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20C49A602561DBD200C5380F /* LaunchScreen.storyboard in Resources */,
+				20C49A5D2561DBD200C5380F /* Assets.xcassets in Resources */,
+				20C49A582561DBCC00C5380F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20C49A492561DBCC00C5380F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20C49A552561DBCC00C5380F /* ViewController.swift in Sources */,
+				20C49A512561DBCC00C5380F /* AppDelegate.swift in Sources */,
+				20C49A532561DBCC00C5380F /* SceneDelegate.swift in Sources */,
+				20C49A6C2561E47900C5380F /* CPPWrapper.mm in Sources */,
+				20C49A5B2561DBCC00C5380F /* __puzzle_iOS.xcdatamodeld in Sources */,
+				20C49A6A2561DF9300C5380F /* Solver.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		20C49A562561DBCC00C5380F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20C49A572561DBCC00C5380F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		20C49A5E2561DBD200C5380F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20C49A5F2561DBD200C5380F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20C49A622561DBD200C5380F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		20C49A632561DBD200C5380F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20C49A652561DBD200C5380F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8B4ZHW4G93;
+				INFOPLIST_FILE = 8_puzzle_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dumbies.--puzzle-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "8_puzzle_iOS/8_puzzle_iOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20C49A662561DBD200C5380F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8B4ZHW4G93;
+				INFOPLIST_FILE = 8_puzzle_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dumbies.--puzzle-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "8_puzzle_iOS/8_puzzle_iOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20C49A482561DBCC00C5380F /* Build configuration list for PBXProject "8_puzzle_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20C49A622561DBD200C5380F /* Debug */,
+				20C49A632561DBD200C5380F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20C49A642561DBD200C5380F /* Build configuration list for PBXNativeTarget "8_puzzle_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20C49A652561DBD200C5380F /* Debug */,
+				20C49A662561DBD200C5380F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		20C49A592561DBCC00C5380F /* __puzzle_iOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				20C49A5A2561DBCC00C5380F /* __puzzle_iOS.xcdatamodel */,
+			);
+			currentVersion = 20C49A5A2561DBCC00C5380F /* __puzzle_iOS.xcdatamodel */;
+			path = __puzzle_iOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 20C49A452561DBCC00C5380F /* Project object */;
+}
