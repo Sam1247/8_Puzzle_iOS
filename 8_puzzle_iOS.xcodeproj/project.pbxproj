@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20B1CCDC2562AB4A004E5F69 /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1CCDB2562AB4A004E5F69 /* NumberCell.swift */; };
+		20B1CCDE2562C498004E5F69 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1CCDD2562C498004E5F69 /* GameViewModel.swift */; };
 		20C49A512561DBCC00C5380F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A502561DBCC00C5380F /* AppDelegate.swift */; };
 		20C49A532561DBCC00C5380F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A522561DBCC00C5380F /* SceneDelegate.swift */; };
 		20C49A552561DBCC00C5380F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A542561DBCC00C5380F /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20B1CCDB2562AB4A004E5F69 /* NumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCell.swift; sourceTree = "<group>"; };
+		20B1CCDD2562C498004E5F69 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		20C49A4D2561DBCC00C5380F /* 8_puzzle_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 8_puzzle_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C49A502561DBCC00C5380F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20C49A522561DBCC00C5380F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 				20C49A502561DBCC00C5380F /* AppDelegate.swift */,
 				20C49A522561DBCC00C5380F /* SceneDelegate.swift */,
 				20C49A542561DBCC00C5380F /* ViewController.swift */,
+				20B1CCDD2562C498004E5F69 /* GameViewModel.swift */,
+				20B1CCDB2562AB4A004E5F69 /* NumberCell.swift */,
 				20C49A6E2561E61800C5380F /* CPP Wrapper */,
 				20C49A562561DBCC00C5380F /* Main.storyboard */,
 				20C49A672561DF9200C5380F /* 8_puzzle_iOS-Bridging-Header.h */,
@@ -166,8 +172,10 @@
 				20C49A512561DBCC00C5380F /* AppDelegate.swift in Sources */,
 				20C49A532561DBCC00C5380F /* SceneDelegate.swift in Sources */,
 				20C49A6C2561E47900C5380F /* CPPWrapper.mm in Sources */,
+				20B1CCDE2562C498004E5F69 /* GameViewModel.swift in Sources */,
 				20C49A5B2561DBCC00C5380F /* __puzzle_iOS.xcdatamodeld in Sources */,
 				20C49A6A2561DF9300C5380F /* Solver.cpp in Sources */,
+				20B1CCDC2562AB4A004E5F69 /* NumberCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
