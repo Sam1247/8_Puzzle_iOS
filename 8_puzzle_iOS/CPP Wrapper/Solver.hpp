@@ -48,11 +48,17 @@ struct Node {
 class Solver
 {
 private:
+//    bool leftSwappable(int index);
+//    bool rightSwappable(int index);
+//    bool upSwappable(int index);
+//    bool downSwappable(int index);
+
     unordered_set<string> isVisited;
     Node *solutionNode = nullptr;
     bool isValidIndex(int index);
     vector<Node*> getNeighborsFrom(Node *node);
 public:
+    vector<string> steps;
     void printSolution(Node *node);
     void bfs(Node* initial);
     void dfs(Node* initial);

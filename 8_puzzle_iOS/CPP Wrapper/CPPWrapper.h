@@ -12,7 +12,7 @@
 
 - (void) bfs:(NSString *)initial;
 - (void) dfs:(NSString *)initial;
-
+- (NSMutableArray *) generatedSteps;
 
 
 @end

@@ -11,7 +11,7 @@
 		20B1CCDE2562C498004E5F69 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1CCDD2562C498004E5F69 /* GameViewModel.swift */; };
 		20C49A512561DBCC00C5380F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A502561DBCC00C5380F /* AppDelegate.swift */; };
 		20C49A532561DBCC00C5380F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A522561DBCC00C5380F /* SceneDelegate.swift */; };
-		20C49A552561DBCC00C5380F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A542561DBCC00C5380F /* ViewController.swift */; };
+		20C49A552561DBCC00C5380F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A542561DBCC00C5380F /* GameViewController.swift */; };
 		20C49A582561DBCC00C5380F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C49A562561DBCC00C5380F /* Main.storyboard */; };
 		20C49A5B2561DBCC00C5380F /* __puzzle_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20C49A592561DBCC00C5380F /* __puzzle_iOS.xcdatamodeld */; };
 		20C49A5D2561DBD200C5380F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20C49A5C2561DBD200C5380F /* Assets.xcassets */; };
@@ -26,7 +26,7 @@
 		20C49A4D2561DBCC00C5380F /* 8_puzzle_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 8_puzzle_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C49A502561DBCC00C5380F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20C49A522561DBCC00C5380F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		20C49A542561DBCC00C5380F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20C49A542561DBCC00C5380F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		20C49A572561DBCC00C5380F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20C49A5A2561DBCC00C5380F /* __puzzle_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = __puzzle_iOS.xcdatamodel; sourceTree = "<group>"; };
 		20C49A5C2561DBD200C5380F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 			children = (
 				20C49A502561DBCC00C5380F /* AppDelegate.swift */,
 				20C49A522561DBCC00C5380F /* SceneDelegate.swift */,
-				20C49A542561DBCC00C5380F /* ViewController.swift */,
+				20C49A542561DBCC00C5380F /* GameViewController.swift */,
 				20B1CCDD2562C498004E5F69 /* GameViewModel.swift */,
 				20B1CCDB2562AB4A004E5F69 /* NumberCell.swift */,
 				20C49A6E2561E61800C5380F /* CPP Wrapper */,
@@ -168,7 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20C49A552561DBCC00C5380F /* ViewController.swift in Sources */,
+				20C49A552561DBCC00C5380F /* GameViewController.swift in Sources */,
 				20C49A512561DBCC00C5380F /* AppDelegate.swift in Sources */,
 				20C49A532561DBCC00C5380F /* SceneDelegate.swift in Sources */,
 				20C49A6C2561E47900C5380F /* CPPWrapper.mm in Sources */,

@@ -20,13 +20,15 @@ vector<Node*> Solver::getNeighborsFrom(Node *node) {
     vector<Node *> neighbors;
     int emptyIndex = node->emptyIndex();
     // swap right
-    if (isValidIndex(emptyIndex+1)) {
+    if ((emptyIndex != 2 && emptyIndex != 5 && emptyIndex != 8) &&
+        isValidIndex(emptyIndex+1)) {
         Node *newNode = new Node(node->val, node);
         newNode->swap(emptyIndex, emptyIndex+1);
         neighbors.push_back(newNode);
     }
     // swap left
-    if (isValidIndex(emptyIndex-1)) {
+    if ((emptyIndex != 0 && emptyIndex != 3 && emptyIndex != 6) &&
+        isValidIndex(emptyIndex-1)) {
         Node *newNode = new Node(node->val, node);
         newNode->swap(emptyIndex, emptyIndex-1);
         neighbors.push_back(newNode);
@@ -48,7 +50,6 @@ vector<Node*> Solver::getNeighborsFrom(Node *node) {
 
 void Solver::printSolution(Node *node) {
     Node *currentNode = node;
-    vector<string> steps;
     while (currentNode != nullptr) {
         steps.push_back(currentNode->val);
         currentNode = currentNode->previous;

@@ -8,21 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
     enum Section {
       case main
     }
-    private var numberDataList = [
-        NumberData(labelName: ""),
-        NumberData(labelName: "1"),
-        NumberData(labelName: "2"),
-        NumberData(labelName: "3"),
-        NumberData(labelName: "4"),
-        NumberData(labelName: "5"),
-        NumberData(labelName: "6"),
-        NumberData(labelName: "7"),
-        NumberData(labelName: "8"),
-    ]
+    let viewModel = GameViewModel()
     typealias DataSource = UICollectionViewDiffableDataSource<Section, NumberData>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, NumberData>
     private lazy var dataSource = makeDataSource()
@@ -41,41 +31,40 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let cppWrapper = CPPWrapper()
-        cppWrapper.bfs("182043765")
         configureLayout()
         applySnapshot(completion: nil)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.numberDataList.swapAt(0, 1)
-            self.applySnapshot(animatingDifferences: true) {
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    self.animate()
-                }
-            }
-        }
     }
 
-    func animate() {
-        self.numberDataList.swapAt(0, 1)
+    func animateTest() {
+        viewModel.numberDataList = viewModel.solutionSteps[1]
+        applySnapshot(animatingDifferences: true, completion: nil)
+    }
+
+    func animate(index: Int) {
+        if (index == viewModel.solutionSteps.count) {
+            return
+        }
+        viewModel.numberDataList = viewModel.solutionSteps[index]
         self.applySnapshot(animatingDifferences: true) {
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                self.animate()
-            }
+            self.animate(index: index+1)
         }
     }
     
     @IBAction func solve(_ sender: Any) {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.generateSolution()
+            DispatchQueue.main.async {
+                self.animate(index: 1)
+            }
+        }
         print(#function)
     }
+
     func applySnapshot(animatingDifferences: Bool = true, completion: (() -> Void)?) {
-        // 2
         var snapshot = Snapshot()
-        // 3
         snapshot.appendSections([.main])
-        // 4
-        snapshot.appendItems(numberDataList)
-        // 5
+        snapshot.appendItems(viewModel.numberDataList)
         dataSource.apply(snapshot, animatingDifferences: animatingDifferences, completion: completion)
     }
     
@@ -90,8 +79,9 @@ class ViewController: UIViewController {
                     withReuseIdentifier: "NumberCell",
                     for: indexPath) as? NumberCell
                 cell?.numberLabel.text = numberData.labelName
-                if numberData.labelName == "" {
+                if numberData.labelName == "0" {
                     cell?.containerView.backgroundColor = .clear
+                    cell?.numberLabel.text = ""
                 }
                 return cell
         })
@@ -101,7 +91,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 9
     }
@@ -114,7 +104,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
 
 // MARK: - Layout Handling
-extension ViewController {
+extension GameViewController {
     private func configureLayout() {
         collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
             let itemSize = NSCollectionLayoutSize(
@@ -142,7 +132,3 @@ extension ViewController {
     }
 }
 
-struct NumberData: Hashable {
-    var id = UUID()
-    var labelName: String
-}
