@@ -26,13 +26,13 @@
 
 - (void)bfs:(NSString *)initial
 {
-    Node *initialNode = new Node(string([initial UTF8String]), nullptr);
+    Node *initialNode = new Node(string([initial UTF8String]), 0, nullptr);
     _solver->bfs(initialNode);
 }
 
 - (void)dfs:(NSString *)initial
 {
-    Node *initialNode = new Node(string([initial UTF8String]), nullptr);
+    Node *initialNode = new Node(string([initial UTF8String]), 0, nullptr);
     _solver->dfs(initialNode);
 }
 

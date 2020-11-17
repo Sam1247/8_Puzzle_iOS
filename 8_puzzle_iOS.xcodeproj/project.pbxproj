@@ -89,9 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				20C49A682561DF9300C5380F /* Solver.cpp */,
+				20C49A692561DF9300C5380F /* Solver.hpp */,
 				20C49A6B2561E47900C5380F /* CPPWrapper.mm */,
 				20C49A6D2561E49F00C5380F /* CPPWrapper.h */,
-				20C49A692561DF9300C5380F /* Solver.hpp */,
 			);
 			path = "CPP Wrapper";
 			sourceTree = "<group>";

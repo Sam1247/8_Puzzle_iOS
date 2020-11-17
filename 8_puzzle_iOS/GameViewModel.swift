@@ -24,7 +24,7 @@ class GameViewModel {
     ]
     
     func generateSolution() {
-        cppWrapper.bfs("182043765");
+        cppWrapper.dfs("182043765");
         let states = cppWrapper.generatedSteps() as! [String]
         for state in states {
             let newState = [

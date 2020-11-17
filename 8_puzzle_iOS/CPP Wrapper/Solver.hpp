@@ -12,9 +12,11 @@
 #include <stdio.h>
 #include <iostream>
 #include <unordered_set>
+#include <unordered_map>
 #include <algorithm>
 #include <iostream>
 #include <stack>
+#include <set>
 #include <queue>
 #define GOAL "012345678"
 #endif /* Solver_hpp */
@@ -24,7 +26,11 @@ using namespace std;
 struct Node {
     string val;
     Node *previous;
-    Node(string val, Node *previous) : val(val), previous(previous) {}
+    int depth;
+    int f;
+    Node(string val, int depth, Node *previous) : val(val), depth(depth), previous(previous) {
+        f = INT_MAX;
+    }
 
     int emptyIndex() {
         int emptyIndex = -1;
@@ -48,11 +54,8 @@ struct Node {
 class Solver
 {
 private:
-//    bool leftSwappable(int index);
-//    bool rightSwappable(int index);
-//    bool upSwappable(int index);
-//    bool downSwappable(int index);
-
+    int manhattan(string val);
+    int euclidean(string val);
     unordered_set<string> isVisited;
     Node *solutionNode = nullptr;
     bool isValidIndex(int index);
@@ -60,6 +63,7 @@ private:
 public:
     vector<string> steps;
     void printSolution(Node *node);
+    void AStar(Node *initial);
     void bfs(Node* initial);
     void dfs(Node* initial);
 };
