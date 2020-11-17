@@ -24,6 +24,11 @@
     return self;
 }
 
+- (NSString *)expandedNodes
+{
+    return @(_solver->expandedNodes.c_str());
+}
+
 - (void)bfs:(NSString *)initial
 {
     Node *initialNode = new Node(string([initial UTF8String]), 0, nullptr);
@@ -34,6 +39,18 @@
 {
     Node *initialNode = new Node(string([initial UTF8String]), 0, nullptr);
     _solver->dfs(initialNode);
+}
+
+- (void)AStarEuclidean:(NSString *)initial
+{
+    Node *initialNode = new Node(string([initial UTF8String]), 0, nullptr);
+    _solver->AStarEuclidean(initialNode);
+}
+
+- (void)AStarManhattan:(NSString *)initial
+{
+    Node *initialNode = new Node(string([initial UTF8String]), 0, nullptr);
+    _solver->AStarManhattan(initialNode);
 }
 
 - (NSMutableArray *)generatedSteps

@@ -12,7 +12,11 @@
 
 - (void) bfs:(NSString *)initial;
 - (void) dfs:(NSString *)initial;
+- (void) AStarEuclidean:(NSString *)initial;
+- (void) AStarManhattan:(NSString *)initial;
 - (NSMutableArray *) generatedSteps;
+- (NSString *)expandedNodes;
+
 
 
 @end

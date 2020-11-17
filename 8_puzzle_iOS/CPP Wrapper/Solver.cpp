@@ -64,13 +64,13 @@ vector<Node*> Solver::getNeighborsFrom(Node *node) {
 
 void Solver::printSolution(Node *node) {
     Node *currentNode = node;
-    vector<string> steps;
-    while (currentNode != nullptr) {
+      while (currentNode != nullptr) {
         steps.push_back(currentNode->val);
         currentNode = currentNode->previous;
     }
     cout << steps.size() - 1 << " Steps" << endl;
     reverse(steps.begin(), steps.end());
+    
     for (auto step: steps) {
         //            cout << step << endl;
     }
@@ -83,6 +83,7 @@ void Solver::bfs(Node *initial) {
     while (!frontier.empty()) {
         Node *currentNode = frontier.front(); frontier.pop();
         if (currentNode->val == GOAL) {
+            expandedNodes = to_string(isVisited.size());
             cout << "search depth " << currentNode->depth << endl;
             printSolution(currentNode);
             cout << "nodes expanded " << isVisited.size() << endl;
@@ -98,7 +99,7 @@ void Solver::bfs(Node *initial) {
     }
 }
 
-void Solver::AStar(Node* initial) {
+void Solver::AStarEuclidean(Node* initial) {
     set<pair<int, Node *>> frontier;
     frontier.insert(make_pair(0 + euclidean(initial->val) , initial));
     while (!frontier.empty()) {
@@ -109,6 +110,7 @@ void Solver::AStar(Node* initial) {
         isVisited.insert(currentNode->val);
         
         if (currentNode->val == GOAL) {
+            expandedNodes = to_string(isVisited.size());
             cout << "path cost " << currentNode->f << endl;
             cout << "search depth " << currentNode->depth << endl;
             printSolution(currentNode);
@@ -135,6 +137,46 @@ void Solver::AStar(Node* initial) {
         }
     }
 }
+
+void Solver::AStarManhattan(Node* initial) {
+    set<pair<int, Node *>> frontier;
+    frontier.insert(make_pair(0 + manhattan(initial->val) , initial));
+    while (!frontier.empty()) {
+        pair<int, Node *> currentPair = *frontier.begin();
+        frontier.erase(currentPair);
+        Node *currentNode = currentPair.second;
+        
+        isVisited.insert(currentNode->val);
+        
+        if (currentNode->val == GOAL) {
+            expandedNodes = to_string(isVisited.size());
+            cout << "path cost " << currentNode->f << endl;
+            cout << "search depth " << currentNode->depth << endl;
+            printSolution(currentNode);
+            cout << "nodes expanded " << isVisited.size() << endl;
+            return;
+        }
+        
+        vector<Node *> neighbors = getNeighborsFrom(currentNode);
+        
+        for (auto neighbor: neighbors) {
+            if (isVisited.find(neighbor->val) == isVisited.end() && frontier.find(make_pair(neighbor->f, neighbor)) == frontier.end()) {
+                int f = neighbor->depth + manhattan(neighbor->val);
+                neighbor->f = f;
+                frontier.insert(make_pair(f, neighbor));
+            } else if (frontier.find(make_pair(neighbor->f, neighbor)) != frontier.end()) {
+                int oldCost = neighbor->f;
+                int newCost = neighbor->depth + manhattan(neighbor->val);
+                if (newCost < oldCost) {
+                    frontier.erase(make_pair(oldCost, neighbor));
+                    neighbor->f = newCost;
+                    frontier.insert(make_pair(newCost, neighbor));
+                }
+            }
+        }
+    }
+}
+
 
 int Solver::manhattan(string val) {
     unordered_map<int, pair<int, int>> map;
@@ -164,6 +206,7 @@ void Solver::dfs(Node* initial) {
         Node *currentNode = frontier.top(); frontier.pop();
         isVisited.insert(currentNode->val);
         if (currentNode->val == GOAL) {
+            expandedNodes = to_string(isVisited.size());
             cout << "search depth " << currentNode->depth << endl;
             printSolution(currentNode);
             cout << "nodes expanded " << isVisited.size() << endl;

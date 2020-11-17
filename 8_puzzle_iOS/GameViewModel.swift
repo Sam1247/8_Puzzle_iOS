@@ -10,7 +10,11 @@ import Foundation
 
 class GameViewModel {
     private let cppWrapper = CPPWrapper()
+    var algorithmType = AlgorithmType.bfs
     var solutionSteps = [[NumberData]]()
+    var runTime = ""
+    var expandedNodes = ""
+    var stepsCount = ""
     var numberDataList = [
         NumberData(labelName: "1"),
         NumberData(labelName: "8"),
@@ -22,10 +26,32 @@ class GameViewModel {
         NumberData(labelName: "6"),
         NumberData(labelName: "5")
     ]
-    
+
+    private func toString(from list: [NumberData]) -> String {
+        var str = String()
+        for numberData in numberDataList {
+            str.append(numberData.labelName)
+        }
+        return str
+    }
+
     func generateSolution() {
-        cppWrapper.dfs("182043765");
+        let dataListString = toString(from: numberDataList)
+        let start = CFAbsoluteTimeGetCurrent()
+        switch algorithmType {
+        case .bfs:
+            cppWrapper.bfs(dataListString)
+        case .dfs:
+            cppWrapper.dfs(dataListString)
+        case .aStarManhattan:
+            cppWrapper.aStarManhattan(dataListString)
+        case .aStarEuclidean:
+            cppWrapper.aStarEuclidean(dataListString)
+        }
+        runTime = String(String(CFAbsoluteTimeGetCurrent() - start).prefix(6))
+        expandedNodes = cppWrapper.expandedNodes()
         let states = cppWrapper.generatedSteps() as! [String]
+        stepsCount = String(states.count)
         for state in states {
             let newState = [
                 NumberData(labelName: state[0]),
@@ -51,4 +77,11 @@ extension String {
 
 struct NumberData: Hashable {
     var labelName: String
+}
+
+enum AlgorithmType {
+    case bfs
+    case dfs
+    case aStarEuclidean
+    case aStarManhattan
 }

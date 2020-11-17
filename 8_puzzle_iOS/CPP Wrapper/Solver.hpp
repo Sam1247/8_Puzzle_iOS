@@ -62,8 +62,10 @@ private:
     vector<Node*> getNeighborsFrom(Node *node);
 public:
     vector<string> steps;
+    string expandedNodes;
     void printSolution(Node *node);
-    void AStar(Node *initial);
+    void AStarEuclidean(Node *initial);
+    void AStarManhattan(Node* initial);
     void bfs(Node* initial);
     void dfs(Node* initial);
 };

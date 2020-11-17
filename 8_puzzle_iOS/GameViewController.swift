@@ -17,6 +17,15 @@ class GameViewController: UIViewController {
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, NumberData>
     private lazy var dataSource = makeDataSource()
 
+    @IBOutlet var infoStackView: UIStackView! {
+        didSet {
+            infoStackView.alpha = 0
+        }
+    }
+    @IBOutlet var spinner: UIActivityIndicatorView!
+    @IBOutlet var stepsLabel: UILabel!
+    @IBOutlet var expandedNodesLabel: UILabel!
+    @IBOutlet var runtimeLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -33,6 +42,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         configureLayout()
         applySnapshot(completion: nil)
+        spinner.hidesWhenStopped = true
     }
 
     func animateTest() {
@@ -42,6 +52,7 @@ class GameViewController: UIViewController {
 
     func animate(index: Int) {
         if (index == viewModel.solutionSteps.count) {
+            updateInfoStack()
             return
         }
         viewModel.numberDataList = viewModel.solutionSteps[index]
@@ -49,18 +60,46 @@ class GameViewController: UIViewController {
             self.animate(index: index+1)
         }
     }
-    
+
+    func updateInfoStack() {
+        UIView.animate(withDuration: 0.2) {
+            self.infoStackView.alpha = 1
+            self.stepsLabel.text = self.viewModel.stepsCount
+            self.expandedNodesLabel.text = self.viewModel.expandedNodes
+            self.runtimeLabel.text = self.viewModel.runTime
+        }
+    }
+
     @IBAction func solve(_ sender: Any) {
+        spinner.startAnimating()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self = self else { return }
             self.viewModel.generateSolution()
             DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+                self.solveButton.isEnabled = true
                 self.animate(index: 1)
             }
         }
+        solveButton.isEnabled = false
         print(#function)
     }
-
+    
+    @IBAction func algorithmTypeDidChange(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            viewModel.algorithmType = .bfs
+        case 1:
+            viewModel.algorithmType = .dfs
+        case 2:
+            viewModel.algorithmType = .aStarEuclidean
+        case 3:
+            viewModel.algorithmType = .aStarManhattan
+        default:
+            viewModel.algorithmType = .bfs
+        }
+    }
+    
     func applySnapshot(animatingDifferences: Bool = true, completion: (() -> Void)?) {
         var snapshot = Snapshot()
         snapshot.appendSections([.main])
