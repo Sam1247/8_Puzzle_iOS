@@ -1,1 +1,2 @@
-# 8_Puzzle_iOS
+# 8 Puzzle_iOS
+Visualization of an efficient implementation of path finding algorithms (BFS, DFS, A*) using UIKit
